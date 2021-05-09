@@ -16,4 +16,25 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="LoginLabel">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:layout_width">@dimen/label_width</item>
+    </style>
+
+    <style name="LoginInput">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:layout_width">@dimen/input_width</item>
+    </style>
+
+    <style name="WelcomeTitle">
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+
+    <style name="WelcomeContent">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:layout_marginLeft">@dimen/horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/horizontal_margin</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>

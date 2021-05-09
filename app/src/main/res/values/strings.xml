@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">ShoeStore</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="login_button">Log in</string>
+    <string name="register_button">Register</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="instruction_button">Go to instruction</string>
+    <string name="welcome_title">Welcome to my shoes store!</string>
+    <string name="welcome_content">Roses are red\nviolets are blue\nThis is shoes app\nI made for you.</string>
 </resources>
