@@ -26,7 +26,7 @@
         <item name="android:layout_width">@dimen/input_width</item>
     </style>
 
-    <style name="WelcomeTitle">
+    <style name="Title">
         <item name="android:textSize">@dimen/text_large</item>
     </style>
 
@@ -35,6 +35,15 @@
         <item name="android:layout_marginLeft">@dimen/horizontal_margin</item>
         <item name="android:layout_marginRight">@dimen/horizontal_margin</item>
         <item name="android:gravity">center</item>
+    </style>
+
+    <style name="InstructionContent">
+        <item name="android:textSize">@dimen/text_normal</item>
+    </style>
+
+    <style name="FloatingButton">
+        <item name="android:layout_gravity">bottom|end</item>
+        <item name="android:layout_margin">@dimen/float_button_margin</item>
     </style>
 
 </resources>

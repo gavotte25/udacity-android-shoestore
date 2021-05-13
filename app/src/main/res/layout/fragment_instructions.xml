@@ -6,47 +6,44 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".screens.welcome.WelcomeFragment">
+        tools:context=".screens.instructions.InstructionsFragment">
 
         <TextView
-            android:id="@+id/welcome_title_text"
+            android:id="@+id/instruction_label_text"
             style="@style/Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/welcome_title"
-            app:layout_constraintBottom_toTopOf="@+id/welcome_content_text"
+            android:text="@string/instruction_title"
+            app:layout_constraintBottom_toTopOf="@+id/instruction_content_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
-            android:id="@+id/welcome_content_text"
-            style="@style/WelcomeContent"
-            android:layout_width="0dp"
+            android:id="@+id/instruction_content_text"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="100dp"
-            android:text="@string/welcome_content"
-            app:layout_constraintBottom_toTopOf="@+id/welcome_to_instruction_btn"
+            android:text="@string/instruction_content"
+            app:layout_constraintBottom_toTopOf="@+id/instruction_to_shoe_list_btn"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/welcome_title_text" />
+            app:layout_constraintTop_toBottomOf="@+id/instruction_label_text" />
 
         <Button
-            android:id="@+id/welcome_to_instruction_btn"
+            android:id="@+id/instruction_to_shoe_list_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
-            android:text="@string/instruction_button"
+            android:text="@string/shoe_list_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/welcome_content_text" />
-
+            app:layout_constraintTop_toBottomOf="@+id/instruction_content_text" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
