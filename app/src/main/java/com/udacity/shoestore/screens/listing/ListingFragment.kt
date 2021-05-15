@@ -26,7 +26,7 @@ class ListingFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_listing, container, false)
 
-        viewModel.shoesList.observe(viewLifecycleOwner, Observer {
+        viewModel.shoesList.observe(viewLifecycleOwner, {
             for (shoe in it) {
                 val imageView = ImageView(context)
                 val imageRes = this.resources.getIdentifier(

@@ -15,8 +15,7 @@
     <string name="shoe_list_button">Go to inventory</string>
     <string name="instruction_intro">Keep in mind below instructions when you use my app:</string>
     <string name="instruction_content">
-        1. Install the app\n
-        2. Get the app installed
+        1. Install the app\n2. Get the app installed
     </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
