@@ -21,7 +21,7 @@
 
         <TextView
             android:id="@+id/instruction_content_text"
-            style="@style/MainText"
+            style="@style/PrimaryText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -33,7 +33,7 @@
 
         <TextView
             android:id="@+id/instruction_intro_text"
-            style="@style/MainText"
+            style="@style/PrimaryText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"

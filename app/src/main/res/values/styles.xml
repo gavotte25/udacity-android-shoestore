@@ -16,29 +16,35 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="MainText">
+    <style name="PrimaryText">
         <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:fontFamily">@font/lora_italic</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
     </style>
 
-    <style name="FormLabel" parent="MainText">
+    <style name="SecondaryText">
+        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="FormLabel" parent="PrimaryText">
         <item name="android:layout_width">@dimen/label_width</item>
     </style>
 
-    <style name="FormInput" parent="MainText">
+    <style name="FormInput" parent="PrimaryText">
         <item name="android:layout_width">@dimen/input_width</item>
     </style>
 
-    <style name="Title">
-        <item name="android:textSize">@dimen/text_large</item>
-    </style>
-
-    <style name="WelcomeContent" parent="MainText">
+    <style name="WelcomeContent" parent="PrimaryText">
         <item name="android:layout_marginLeft">@dimen/horizontal_margin</item>
         <item name="android:layout_marginRight">@dimen/horizontal_margin</item>
         <item name="android:gravity">center</item>
     </style>
 
-    <style name="InstructionContent" parent="MainText">
+    <style name="InstructionContent" parent="PrimaryText">
         <item name="android:textSize">@dimen/text_normal</item>
     </style>
 

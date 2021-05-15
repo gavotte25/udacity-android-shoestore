@@ -40,7 +40,7 @@ class DetailFragment : Fragment() {
                     mutableListOf("blank")
                 )
                 if (viewModel.addShoe(shoe)) {
-                    findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToListingFragment())
+                    findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToListingFragment2())
                 }
                 else {
                     Toast.makeText(context, "Cannot add new shoe, please try again!", Toast.LENGTH_LONG).show()
