@@ -9,6 +9,7 @@ import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.MainViewModel
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentListingBinding
@@ -24,6 +25,7 @@ class ListingFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_listing, container, false)
+
         viewModel.shoesList.observe(viewLifecycleOwner, Observer {
             for (shoe in it) {
                 val imageView = ImageView(context)
@@ -38,6 +40,10 @@ class ListingFragment : Fragment() {
                 binding.imageListLayout.addView(imageView)
             }
         })
+
+        binding.addFloatingBtn.setOnClickListener { findNavController()
+            .navigate(ListingFragmentDirections.actionListingFragmentToDetailFragment()) }
+
         return binding.root
     }
 }

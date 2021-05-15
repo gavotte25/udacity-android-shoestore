@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screens.detail.DetailFragment">
+
+        <TextView
+            android:id="@+id/company_text"
+            style="@style/FormLabel"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:labelFor="@id/company_edit_text"
+            android:text="@string/company"
+            app:layout_constraintBottom_toTopOf="@+id/shoe_size_text"
+            app:layout_constraintEnd_toStartOf="@+id/company_edit_text"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_name_text" />
+
+        <EditText
+            android:id="@+id/company_edit_text"
+            style="@style/FormInput"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            app:layout_constraintBaseline_toBaselineOf="@+id/company_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/company_text" />
+
+        <TextView
+            android:id="@+id/shoe_name_text"
+            style="@style/FormLabel"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/shoe_name_edit_text"
+            android:text="@string/shoe_name"
+            app:layout_constraintBottom_toTopOf="@+id/company_text"
+            app:layout_constraintEnd_toStartOf="@+id/shoe_name_edit_text"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <EditText
+            android:id="@+id/shoe_name_edit_text"
+            style="@style/FormInput"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            app:layout_constraintBaseline_toBaselineOf="@+id/shoe_name_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/shoe_name_text" />
+
+        <TextView
+            android:id="@+id/shoe_size_text"
+            style="@style/FormLabel"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:labelFor="@id/shoe_size_edit_text"
+            android:text="@string/shoe_size"
+            app:layout_constraintBottom_toTopOf="@+id/description_text"
+            app:layout_constraintEnd_toStartOf="@+id/shoe_size_edit_text"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/company_text" />
+
+        <EditText
+            android:id="@+id/shoe_size_edit_text"
+            style="@style/FormInput"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            app:layout_constraintBaseline_toBaselineOf="@+id/shoe_size_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/shoe_size_text" />
+
+        <TextView
+            android:id="@+id/description_text"
+            style="@style/FormLabel"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:labelFor="@id/description_edit_text"
+            android:text="@string/shoe_description"
+            app:layout_constraintBottom_toTopOf="@+id/cancel_btn"
+            app:layout_constraintEnd_toStartOf="@+id/description_edit_text"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_size_text" />
+
+        <EditText
+            android:id="@+id/description_edit_text"
+            style="@style/FormInput"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            app:layout_constraintBaseline_toBaselineOf="@+id/description_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/description_text" />
+
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="@android:string/cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/save_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description_text" />
+
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            app:layout_constraintBaseline_toBaselineOf="@+id/cancel_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cancel_btn" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
