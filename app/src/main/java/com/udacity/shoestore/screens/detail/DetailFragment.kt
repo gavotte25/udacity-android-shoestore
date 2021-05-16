@@ -32,7 +32,6 @@ class DetailFragment : Fragment() {
         binding.cancelBtn.setOnClickListener{findNavController()
             .navigate(DetailFragmentDirections.actionDetailFragmentToListingFragment())}
 
-        binding.shoe = Shoe("", 0.0, "", "", mutableListOf("blank"))
         binding.mainViewModel = viewModel
 
 //        saveBtn.setOnClickListener is replaced by using live data, triggered at layout
@@ -41,6 +40,7 @@ class DetailFragment : Fragment() {
                 true -> {
                     findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToListingFragment2())
                     viewModel.refreshStatus()
+                    viewModel.newShoeRecord()
                 }
                 false -> {
                     Toast.makeText(context, "Cannot add new shoe, please make sure info is filled!", Toast.LENGTH_SHORT).show()
@@ -50,8 +50,10 @@ class DetailFragment : Fragment() {
             }
         })
 
-        binding.cancelBtn.setOnClickListener{findNavController()
-            .navigate(DetailFragmentDirections.actionDetailFragmentToListingFragment())}
+        binding.cancelBtn.setOnClickListener{
+            viewModel.newShoeRecord()
+            findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToListingFragment())
+        }
 
         return binding.root
     }

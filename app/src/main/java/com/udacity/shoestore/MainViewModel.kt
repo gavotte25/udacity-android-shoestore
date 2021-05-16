@@ -17,6 +17,7 @@ class MainViewModel: ViewModel() {
     val addSuccess: LiveData<Boolean?>
         get() = _addSuccess
 
+    lateinit var shoe: Shoe
 
     init {
         _shoesList.value = mutableListOf(
@@ -27,7 +28,7 @@ class MainViewModel: ViewModel() {
             Shoe("ANANAS X DORAEMON 50 YEARS PATTAS", 39.0, "Ananas", "WHITE/SUNRISE 50TH",
                 mutableListOf("pro_a61112_1")))
         _addSuccess.value = null
-
+        newShoeRecord()
     }
 
     fun addShoe(shoe: Shoe) {
@@ -40,6 +41,10 @@ class MainViewModel: ViewModel() {
 
     fun refreshStatus() {
         _addSuccess.value = null
+    }
+
+    fun newShoeRecord() {
+        shoe = Shoe("", 0.0, "", "", mutableListOf("blank"))
     }
 
 
