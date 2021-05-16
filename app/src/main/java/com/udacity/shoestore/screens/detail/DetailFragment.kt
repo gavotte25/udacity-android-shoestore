@@ -8,11 +8,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.MainViewModel
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentDetailBinding
 import com.udacity.shoestore.models.Shoe
+import timber.log.Timber
 import kotlin.Exception
 
 class DetailFragment : Fragment() {
@@ -30,26 +32,23 @@ class DetailFragment : Fragment() {
         binding.cancelBtn.setOnClickListener{findNavController()
             .navigate(DetailFragmentDirections.actionDetailFragmentToListingFragment())}
 
-        binding.saveBtn.setOnClickListener{
-            try {
-                val shoe = Shoe(
-                    binding.shoeNameEditText.text.toString(),
-                    binding.shoeSizeEditText.text.toString().toDouble(),
-                    binding.companyEditText.text.toString(),
-                    binding.descriptionEditText.text.toString(),
-                    mutableListOf("blank")
-                )
-                if (viewModel.addShoe(shoe)) {
+        binding.shoe = Shoe("", 0.0, "", "", mutableListOf("blank"))
+        binding.mainViewModel = viewModel
+
+//        saveBtn.setOnClickListener is replaced by using live data, triggered at layout
+        viewModel.addSuccess.observe(viewLifecycleOwner, Observer { success ->
+            when (success) {
+                true -> {
                     findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToListingFragment2())
+                    viewModel.refreshStatus()
                 }
-                else {
-                    Toast.makeText(context, "Cannot add new shoe, please try again!", Toast.LENGTH_LONG).show()
+                false -> {
+                    Toast.makeText(context, "Cannot add new shoe, please make sure info is filled!", Toast.LENGTH_SHORT).show()
+                    viewModel.refreshStatus()
                 }
+                else -> {}
             }
-            catch (e: Exception) {
-                Toast.makeText(context, "Invalid input, please recheck the information", Toast.LENGTH_LONG).show()
-            }
-        }
+        })
 
         binding.cancelBtn.setOnClickListener{findNavController()
             .navigate(DetailFragmentDirections.actionDetailFragmentToListingFragment())}

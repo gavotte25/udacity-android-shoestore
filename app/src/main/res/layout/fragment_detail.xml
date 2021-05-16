@@ -3,6 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+        <variable
+            name="mainViewModel"
+            type="com.udacity.shoestore.MainViewModel" />
+        <import type="com.udacity.shoestore.converter.Converter"/>
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -30,6 +40,7 @@
             android:ems="10"
             android:importantForAutofill="no"
             android:inputType="text"
+            android:text="@={shoe.company}"
             app:layout_constraintBaseline_toBaselineOf="@+id/company_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -58,6 +69,7 @@
             android:ems="10"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
+            android:text="@={shoe.name}"
             app:layout_constraintBaseline_toBaselineOf="@+id/shoe_name_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -85,6 +97,7 @@
             android:ems="10"
             android:importantForAutofill="no"
             android:inputType="number"
+            android:text="@={Converter.doubleToString(shoe.size)}"
             app:layout_constraintBaseline_toBaselineOf="@+id/shoe_size_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -112,6 +125,7 @@
             android:ems="10"
             android:importantForAutofill="no"
             android:inputType="text"
+            android:text="@={shoe.description}"
             app:layout_constraintBaseline_toBaselineOf="@+id/description_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -136,6 +150,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/save"
+            android:onClick="@{() -> mainViewModel.addShoe(shoe)}"
             app:layout_constraintBaseline_toBaselineOf="@+id/cancel_btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

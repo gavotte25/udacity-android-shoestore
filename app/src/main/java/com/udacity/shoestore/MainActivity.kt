@@ -12,6 +12,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.onNavDestinationSelected
 import com.udacity.shoestore.databinding.ActivityMainBinding
+import com.udacity.shoestore.screens.listing.ListingFragmentDirections
 import com.udacity.shoestore.screens.login.LoginFragmentDirections
 import timber.log.Timber
 
@@ -36,15 +37,4 @@ class MainActivity : AppCompatActivity() {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.logout_menu, menu)
-        navController.addOnDestinationChangedListener{ nc: NavController, nd: NavDestination, args: Bundle? ->
-            menu?.findItem(R.id.loginFragment)?.isVisible = nd.id != nc.graph.startDestination
-        }
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return item.onNavDestinationSelected(navController)||super.onOptionsItemSelected(item)
-    }
 }
