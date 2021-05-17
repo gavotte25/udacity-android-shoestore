@@ -32,10 +32,12 @@
 
     <style name="FormLabel" parent="PrimaryText">
         <item name="android:layout_width">@dimen/label_width</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="FormInput" parent="PrimaryText">
         <item name="android:layout_width">@dimen/input_width</item>
+        <item name="android:gravity">left</item>
     </style>
 
     <style name="WelcomeContent" parent="PrimaryText">
@@ -53,6 +55,11 @@
         <item name="android:layout_margin">@dimen/float_button_margin</item>
     </style>
 
+    <style name="Image">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
 
 
 </resources>

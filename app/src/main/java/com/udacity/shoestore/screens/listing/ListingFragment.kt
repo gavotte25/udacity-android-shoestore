@@ -14,6 +14,8 @@ import androidx.navigation.ui.onNavDestinationSelected
 import com.udacity.shoestore.MainViewModel
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentListingBinding
+import com.udacity.shoestore.databinding.ShoeLayoutBinding
+import com.udacity.shoestore.models.Shoe
 
 class ListingFragment : Fragment() {
 
@@ -29,16 +31,7 @@ class ListingFragment : Fragment() {
 
         viewModel.shoesList.observe(viewLifecycleOwner, {
             for (shoe in it) {
-                val imageView = ImageView(context)
-                val imageRes = this.resources.getIdentifier(
-                    shoe.images.first(),
-                    "drawable",
-                    requireActivity().packageName)
-                imageView.setImageResource(imageRes)
-                imageView.layoutParams = ViewGroup.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    resources.getDimension(R.dimen.image_height).toInt())
-                binding.imageListLayout.addView(imageView)
+                addShoeView(shoe, binding.imageListLayout)
             }
         })
 
@@ -55,5 +48,17 @@ class ListingFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return item.onNavDestinationSelected(findNavController())||super.onOptionsItemSelected(item)
+    }
+
+    private fun addShoeView(shoe: Shoe, container: ViewGroup) {
+        var shoeViewBinding: ShoeLayoutBinding = DataBindingUtil
+            .inflate(LayoutInflater.from(context), R.layout.shoe_layout, container,false)
+        shoeViewBinding.shoe = shoe
+        val imageRes = this.resources.getIdentifier(
+            shoe.images.first(),
+            "drawable",
+            requireActivity().packageName)
+        shoeViewBinding.tplShoeImg.setImageResource(imageRes)
+        container.addView(shoeViewBinding.root)
     }
 }

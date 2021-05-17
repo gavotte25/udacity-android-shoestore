@@ -9,7 +9,8 @@
             type="com.udacity.shoestore.MainViewModel" />
         <import type="com.udacity.shoestore.converter.Converter"/>
     </data>
-
+<!--This layout contain many views positioned horizontally and vertically so that LinearLayout
+is not for this case (unless using nesting layout). ConstraintLayout matches the requirement perfectly-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

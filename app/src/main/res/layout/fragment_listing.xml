@@ -2,14 +2,16 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <FrameLayout
+<!--FloatingActionButton is intended to be at the right bottom corner, using ConstraintLayout is easier to set it up-->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/floatiing_button_description"
-        tools:context=".screens.listing.ListingFragment">
+        tools:context=".screens.listing.ListingFragment"
+        android:orientation="vertical">
 
         <ScrollView
+            android:id="@+id/shoe_list_scroll"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -18,21 +20,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp" >
-            </LinearLayout>
+                android:padding="16dp" />
 
         </ScrollView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_floating_btn"
             style="@style/FloatingButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:contentDescription="@string/floatiing_button_description"
             android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_add" />
 
-    </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

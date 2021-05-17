@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+<!--All 3 views are arranged vertically, so LinearLayout is the suitable option
+    with more performance advantage than ConstraintLayout-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,11 +23,9 @@
         <TextView
             android:id="@+id/welcome_content_text"
             style="@style/WelcomeContent"
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/text_box_width"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="100dp"
             android:text="@string/welcome_content" />
 
         <Button

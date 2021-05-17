@@ -6,12 +6,7 @@
     <string name="register_button">Register</string>
     <string name="instruction_button">Go to instruction</string>
     <string name="welcome_title">Welcome to my shoes store!</string>
-    <string name="welcome_content">
-        Roses are red\n
-        violets are blue\n
-        This is shoes app\n
-        I made for you.
-    </string>
+    <string name="welcome_content">Roses are red\nViolets are blue\nThis is shoes app\nI made for you.</string>
     <string name="shoe_list_button">Go to inventory</string>
     <string name="instruction_intro">Keep in mind below instructions when you use my app:</string>
     <string name="instruction_content">
@@ -27,4 +22,5 @@
     <string name="shoe_description">Description</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="shoe_image">shoe image</string>
 </resources>

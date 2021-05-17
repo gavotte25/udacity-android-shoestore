@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
+
+<!--This layout contain many views positioned horizontally and vertically so that LinearLayout
+is not for this case (unless using nesting layout). ConstraintLayout matches the requirement perfectly-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@color/lightGray"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/tpl_shoe_img"
+            style="@style/Image"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/shoe_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/blank" />
+
+        <TextView
+            android:id="@+id/tpl_shoe_name_label_text"
+            style="@style/FormLabel"
+            android:layout_height="wrap_content"
+            android:text="@string/shoe_name"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tpl_shoe_name_text"
+            app:layout_constraintEnd_toStartOf="@+id/tpl_shoe_name_text"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tpl_shoe_name_text"
+            style="@style/FormInput"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@{shoe.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tpl_shoe_name_label_text"
+            app:layout_constraintTop_toBottomOf="@+id/tpl_shoe_img" />
+
+        <TextView
+            android:id="@+id/tpl_company_label_text"
+            style="@style/FormLabel"
+            android:layout_height="wrap_content"
+            android:text="@string/company"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tpl_company_text"
+            app:layout_constraintEnd_toStartOf="@+id/tpl_company_text"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tpl_company_text"
+            style="@style/FormInput"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@{shoe.company}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tpl_company_label_text"
+            app:layout_constraintTop_toBottomOf="@+id/tpl_shoe_name_text" />
+
+        <TextView
+            android:id="@+id/tpl_shoe_size_label_text"
+            style="@style/FormLabel"
+            android:layout_height="wrap_content"
+            android:text="@string/shoe_size"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tpl_shoe_size_text"
+            app:layout_constraintEnd_toStartOf="@+id/tpl_shoe_size_text"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tpl_shoe_size_text"
+            style="@style/FormInput"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@{String.valueOf(shoe.size)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tpl_shoe_size_label_text"
+            app:layout_constraintTop_toBottomOf="@+id/tpl_company_text" />
+
+        <TextView
+            android:id="@+id/tpl_description_label_text"
+            style="@style/FormLabel"
+            android:layout_height="wrap_content"
+            android:text="@string/shoe_description"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tpl_description_text"
+            app:layout_constraintEnd_toStartOf="@+id/tpl_description_text"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tpl_description_text"
+            style="@style/FormInput"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@{shoe.description}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tpl_description_label_text"
+            app:layout_constraintTop_toBottomOf="@+id/tpl_shoe_size_text" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
